@@ -1,6 +1,6 @@
 const User = require("../models/user.model");
 const { ApiError } = require("../utils/ApiError");
-const { AsyncHandler } = require("../utils/asyncHandler");
+const { AsyncHandler } = require("../utils/AsyncHandler");
 
 const register = AsyncHandler(async (req, res) => {
   const { name, role, email, password } = req.body;

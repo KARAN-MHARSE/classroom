@@ -20,16 +20,15 @@ app.use("/api/v1/user", userRoute);
 
 // Error middleware
 app.use((err, req, res, next) => {
-  res.json({ success: false, error: err.message });
+  res.status(500).json({ success: false, error: err.message });
 });
+
+const port = process.env.PORT || 5000;
 
 const start = async () => {
   await connection()
     .then(() => {
-      app.listen(
-        process.env.PORT,
-        console.log(`The server is listening on port ${process.env.PORT}`)
-      );
+      app.listen(port, console.log(`The server is listening on port ${port}`));
     })
     .catch((Err) => {
       console.log("Error:", Err.message);

@@ -24,13 +24,16 @@ function SignIn() {
     // console.log(useNavigate());
     e.preventDefault();
     dispatch(signInStart());
-    const res = await fetch("http://localhost:5000/api/v1/user/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
+    const res = await fetch(
+      "https://classroom-1-mlxm.onrender.com/api/v1/user/login",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      }
+    );
     const data = await res.json();
     if (data.success) {
       dispatch(signInSuccess(data.user));

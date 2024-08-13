@@ -20,7 +20,7 @@ function Students() {
   useEffect(() => {
     const getData = async () => {
       const res = await fetch(
-        "http://localhost:5000/api/v1/user/getallteachers"
+        "https://classroom-1-mlxm.onrender.com/api/v1/user/getallteachers"
       );
       const data = await res.json();
       setTeachersList(data.user);
@@ -36,13 +36,16 @@ function Students() {
     e.preventDefault(); // Corrected typo
 
     try {
-      const res = await fetch("http://localhost:5000/api/v1/user/createuser", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const res = await fetch(
+        "https://classroom-1-mlxm.onrender.com/api/v1/user/createuser",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
       const data = await res.json();
       alert(JSON.stringify(data)); // Changed to stringify JSON response
     } catch (error) {
@@ -145,4 +148,4 @@ function Students() {
 
 export default Students;
 
-// http://localhost:5000/api/v1/user/createuser 404 (Not Found)
+// https://classroom-1-mlxm.onrender.com/api/v1/user/createuser 404 (Not Found)

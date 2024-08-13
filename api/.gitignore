@@ -1,0 +1,48 @@
+# Node.js dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Environment files
+.env
+.env.*
+
+# Logs
+*.log
+logs/
+
+# Dependency directories
+jspm_packages/
+
+# Runtime data
+pids/
+*.pid
+*.seed
+
+# npm package-lock files
+package-lock.json
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# IDE/editor directories
+.vscode/
+.idea/
+
+# Test coverage reports
+coverage/
+*.lcov
+
+# Optional: ignoring other files/directories
+*.tgz
+*.zip
+*.tar.gz
+*.rar
+
+# Optional: ignoring specific files in your project
+*.sublime-project
+*.sublime-workspace
+*.swp
